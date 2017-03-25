@@ -16,6 +16,3 @@ def parseExpression(inputExpression):
             allSymbolExpression.append(eachChar)
     print allDigitExpression
     print allSymbolExpression
-            
-inputExpression=raw_input()
-parseExpression(inputExpression)
