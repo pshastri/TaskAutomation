@@ -5,5 +5,5 @@ Created on Mar 16, 2017
 '''
 import datetime
 
-todaydate=datetime.date
+todaydate=datetime.datetime.date()
 print todaydate
