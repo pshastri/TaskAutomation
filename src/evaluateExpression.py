@@ -4,10 +4,10 @@ Created on Mar 21, 2017
 @author: pshastri
 '''
 def parseExpression(inputExpression):
-    answer=0
+#     answer=0
     allDigitExpression=[""]
-    newExpressionList=[]
-#     allSymbolExpression=[]
+#     newExpressionList=[]
+#     allSymbolExpression=[""]
     for eachChar in inputExpression:
         if eachChar.isdigit():
             if allDigitExpression[-1].isdigit():
@@ -16,8 +16,28 @@ def parseExpression(inputExpression):
                 allDigitExpression.append(eachChar)
         else:
             allDigitExpression.append(eachChar)
-    allDigitExpression.remove('')
-    print allDigitExpression
+#     print allDigitExpression
+#     print ("allDigitExpression.remove(''): ", allDigitExpression.remove(''))
+#     print ("allDigitExpression: ", allDigitExpression)
+    mathCalculation(allDigitExpression)
+    
+def mathCalculation(allDigitalExpression):
+    mathList=allDigitalExpression
+#     print len(mathList)
+    mathList.remove("")
+#     print mathList
+    print len(mathList)
+    for i,j in zip(range(len(mathList)),range(len(mathList))):
+        if i+1 == '+':
+            print "i m here"
+            answer=allDigitalExpression(j)+allDigitalExpression(j+2)
+        elif i+1 == '-':
+            answer=allDigitalExpression(j)-allDigitalExpression(j+2)
+    print answer
+    
+      
+    #print allDigitExpression # got the numbers and symbol in a list
+    
 #     print type(allDigitExpression[0])
 #     for i in range (len(allDigitExpression)):
 #         if allDigitExpression[i].isdigit():
@@ -31,4 +51,13 @@ def parseExpression(inputExpression):
     
 
 if __name__=="__main__" :
-    parseExpression("989+9")
+    validInput=False
+    while not validInput:
+        try:
+            print ("Enter the mathematical expression: ")
+            inputExpression=raw_input()
+            validInput=True
+        except:
+            print("Something went wrong, enter mathematical expression")
+            
+    parseExpression(inputExpression)
