@@ -23,17 +23,20 @@ def parseExpression(inputExpression):
     
 def mathCalculation(allDigitalExpression):
     mathList=allDigitalExpression
+    answer=0
 #     print len(mathList)
     mathList.remove("")
 #     print mathList
-    print len(mathList)
-    for i,j in zip(range(len(mathList)),range(len(mathList))):
-        if i+1 == '+':
-            print "i m here"
-            answer=allDigitalExpression(j)+allDigitalExpression(j+2)
+#     print len(mathList)
+    for i,j in zip(range(len(mathList)-1),range(len(mathList)-1)):
+#         print "I m here"
+#         print mathList[i+1]
+        if mathList[i+1] == '+':
+#             print "i m here"
+            answer=answer+int(allDigitalExpression[j])+int(allDigitalExpression[j+2])
         elif i+1 == '-':
-            answer=allDigitalExpression(j)-allDigitalExpression(j+2)
-    print answer
+            answer=allDigitalExpression[j]-allDigitalExpression[j+2]
+    print "Evaluted expression value is: ", answer
     
       
     #print allDigitExpression # got the numbers and symbol in a list
